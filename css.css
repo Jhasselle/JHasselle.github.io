@@ -1,45 +1,276 @@
-@import url('https://fonts.googleapis.com/css?family=Raleway');
+:root {
+   --white: #F8F8F2;
+   --pink: #ff6188;
+   --green: #a9dc76;
+   --yellow: #ffd866;
+   --orange: #fc9867;
+   --blue: #ab9df2;
+   --cyan: #78dce8;
+   --lightgray: #74705D;
+   --darkgray: #282923;
+}
+
 
 body {
-  background: #f1f1f1;
-  font-family: 'Raleway', sans-serif;
-  font-size: 18px;
+
 }
 
-.container {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-evenly;
-  max-width: 1200px;
-  margin: auto;
-
-
-  flex.grow: 2;
+.wrapper {
+   display: flex;  
+   flex-flow: row wrap;
+   font-weight: bold;
+   text-align: center;
+   background: rgb(23, 20, 29);
 }
 
-.item {
-  min-width: 400px;
-  flex-basis: 33.33%;
+.wrapper > * {
+   flex: 1 100%;
 }
 
-@media screen and (max-width: 400px){
-  .item {
-    min-width: 0;
-    flex-basis: 100%;
-  }
+.introduction {
+   display:flex;
+   justify-content: center;
 }
 
-.item-full {
-  flex-basis: 100%;
+p.introP {
+   display:flex;
+   justify-content: center;
 }
 
-.item-contents {
-  margin: 1rem;
-  padding: 0.5rem;
-  background: white;
-  text-align: center;
+.header {
+   color: white;
+   background: black;
 }
 
-.responsive-img {
-  width: 100%;
+.footer {
+   background: tomato;
 }
+
+.main {
+   text-align: left;
+   display: flex;
+   flex-direction: column;
+   flex-shrink: 1;
+}
+
+.showcase {
+   flex-direction: column;
+   display:flex;
+   background: var(--darkgray);
+   padding: 10px;
+   border: 10px;
+}
+
+.sbox {
+   list-style: none;
+   padding: 0px;
+   display:flex;
+   background: var(--darkgray);
+   justify-content: center;
+   align-items: center;
+   
+   box-shadow: 0px 10px 10px 8px rgba(0, 0, 0, 0.4), 0 8px 20px 0 rgba(0, 0, 0, 0.19);
+   
+}
+.sboxPicture {
+   align-content: stretch;
+   align-items: center;
+   width: 500px;
+   height: 200px;
+   display:flex;
+   background: var(--white); 
+   box-shadow: 0px 10px 10px 8px rgba(0, 0, 0, 0.4), 0 8px 20px 0 rgba(0, 0, 0, 0.19);
+}
+.sboxContent {
+   justify-content: flex-start;
+   flex-direction: column;
+   padding: 0px;
+   display:flex;
+
+   border-style: none none dotted none;
+   border-width: 1px;
+   border-color: var(--lightgray);
+}
+.sboxContentTitle {
+   align-items: center;
+   flex-direction: row-left;
+   display:flex;
+}
+.sboxContentTitleIconGreen {
+   flex: 0 1 auto;
+   width: 20px;
+   height: 20px;
+   padding: 5px;
+   display:flex;
+   border-radius: 4%;
+   display: inline-block;
+   background-color: var(--green);
+}
+.sboxContentTitleIconCyan {
+   flex: 0 1 auto;
+   width: 20px;
+   height: 20px;
+   padding: 5px;
+   display:flex;
+   border-radius: 4%;
+   display: inline-block;
+   background-color: var(--cyan);
+}
+.sboxContentTitleIconYellow{
+   flex: 0 1 auto;
+   width: 20px;
+   height: 20px;
+   padding: 5px;
+   display:flex;
+   border-radius: 4%;
+   display: inline-block;
+   background-color: var(--yellow);
+}
+.sboxContentTitleIconOrange {
+   flex: 0 1 auto;
+   width: 20px;
+   height: 20px;
+   padding: 5px;
+   display:flex;
+   border-radius: 4%;
+   display: inline-block;
+   background-color: var(--orange);
+}
+
+.sboxContentDescription {
+   flex-grow: 1;
+   display:flex;
+   flex-direction: column;
+}
+.sboxContentLink {
+   color: var(--blue);
+   display:flex;
+}
+.aside-1 {
+   opacity: 0;
+   
+}
+
+.aside-2 {
+   opacity: 0;
+}
+
+.introductionPicture {
+   align-self: auto;
+   align-items: center;
+   width: 700px;
+   height: 200px;
+   background: tomato;
+   display:flex;
+   background: var(--lightgray); 
+}
+
+.introductionText {
+   color: var(--white);
+   padding-left: 50px;
+   padding-right: 50px;
+   display:flex;
+   order:2
+}
+.introductionResumeButton {
+   color: var(--cyan);
+   flex: 0 1 auto;
+   padding-left: 50px;
+   padding-right: 50px;
+   display:flex;
+   order:3
+}
+
+.introductionSignature {
+   display:flex;
+   align-items: center;
+   align-content: center;
+}
+
+@media all and (min-width: 50px) {
+   .aside { 
+      flex: 1 0 0; 
+   }
+   .sbox { 
+      flex-flow: row wrap;
+      flex-wrap: wrap;
+   }
+   .sboxPicture { 
+      background: var(--lightgray);
+      order: 2;
+      width: 300px;
+   }
+   .sboxContent { 
+      order: 3;
+   }
+   .introductionPicture {
+      width: 400px;
+   }
+   
+}
+
+@media all and (min-width: 800px) {
+   .main    { flex: 3 0px; }
+   .aside-1 { order: 1; } 
+   .main    { order: 2; }
+   .aside-2 { order: 4; }
+   .footer  { order: 5; }
+   .sboxPicture { 
+      background: var(--lightgray);
+      width: 500px;
+      order: 2;
+   }
+   .sboxContent { 
+      order: 3;
+   }
+   .sbox { 
+      flex-flow: row;
+      flex-wrap: nowrap;
+   }
+   .introductionPicture {
+      width: 700px;
+      order: 3;
+   }
+}
+
+
+h2.flexTitle {
+   flex: 0 1 auto;
+   color: var(--pink);
+   padding-left: 30px;
+   padding-right: 20px;
+   
+}
+
+h1.header {
+   flex: 0 1 auto;
+   color: var(--white);
+   padding-left: 30px;
+   padding-right: 30px;
+   
+}
+
+p.flexP {
+   flex: 0 1 auto;
+   color: var(--white);
+   padding-left: 20px;
+   padding-right: 20px;
+}
+
+p.flexP2 {
+   flex: 0 1 auto;
+   color: var(--cyan);
+   padding-left: 35px;
+   padding-right: 20px;
+}
+
+
+
+/*    
+border-style: none none dotted none;
+border-width: 1px;
+border-color: var(--lightgray);
+
+background-image: linear-gradient(to right, rgb(252, 228, 237), rgb(255, 232, 204)); */
+    
+
